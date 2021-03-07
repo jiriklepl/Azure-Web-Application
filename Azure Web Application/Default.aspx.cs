@@ -23,7 +23,7 @@ namespace Azure_Web_Application
             {
                 var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["StorageAccountConnectionString"].ConnectionString);
                 var blobClient = storageAccount.CreateCloudBlobClient();
-                var containerReference = blobClient.GetContainerReference("test"); // name of your container
+                var containerReference = blobClient.GetContainerReference("blob"); // name of your container
 
                 var blobReference = containerReference.GetBlockBlobReference(MyFileUpload.FileName);
                 blobReference.UploadFromStream(MyFileUpload.FileContent);
@@ -34,7 +34,7 @@ namespace Azure_Web_Application
         {
             var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["StorageAccountConnectionString"].ConnectionString);
             var blobClient = storageAccount.CreateCloudBlobClient();
-            var containerReference = blobClient.GetContainerReference("test");
+            var containerReference = blobClient.GetContainerReference("blob");
 
             var blobs = containerReference.ListBlobs();
             FilesRepeater.DataSource = blobs;
