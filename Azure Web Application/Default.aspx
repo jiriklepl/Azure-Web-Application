@@ -13,12 +13,12 @@
             <asp:FileUpload ID="MyFileUpload" runat="server" />
             <asp:Button ID="GoButton" Text="GO!" OnClick="GoButton_Click" runat="server" />
         </div>
+        <h1>Files</h1>
+         <asp:Repeater ID="FilesRepeater" ItemType="Microsoft.Azure.Storage.Blob.IListBlobItem" runat="server">
+ 	        <ItemTemplate>
+ 		        <asp:LinkButton ID="FileLink" CommandArgument="<%# Item.Uri %>" Text="<%# Item.Uri %>" OnCommand="FileLink_Command" runat="server" /><br />
+ 	        </ItemTemplate>
+         </asp:Repeater>
     </form>
-    <h1>Files</h1>
-     <asp:Repeater ID="FilesRepeater" ItemType="Microsoft.Azure.Storage.Blob.IListBlobItem" runat="server">
- 	    <ItemTemplate>
- 		    <asp:LinkButton ID="FileLink" CommandArgument="<%# Item.Uri %>" Text="<%# Item.Uri %>" OnCommand="FileLink_Command" runat="server" /><br />
- 	    </ItemTemplate>
-     </asp:Repeater>
 </body>
 </html>
