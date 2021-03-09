@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk;Microsoft.NET.Sdk.Publish">
-	<Import Project="..\packages\Microsoft.Web.WebJobs.Publish.2.0.0\build\Microsoft.Web.WebJobs.Publish.targets" />
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
