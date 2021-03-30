@@ -142,7 +142,7 @@
   <ItemGroup>
     <Content Include="ApplicationInsights.config" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\AzureWebApplication20210306040810 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\AzureWebApplication20210330123041 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
