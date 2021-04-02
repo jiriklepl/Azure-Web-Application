@@ -14,8 +14,8 @@ namespace RedisCache
         static void Main(string[] args)
         {
             Request("Request an object", new object());
-            Request("Request a computation", "y = x  + x; x = 5");
-            Request("Request a computation", "y = x  + x; x = 5"); // again
+            Request("Request a computation", "y = x + x; x = 5");
+            Request("Request a computation", "y = x + x; x = 5"); // again
             Request("Request a file content", "/etc/passwd");
             Request("Unique request " + Guid.NewGuid().ToString(), "/etc/passwd");
 

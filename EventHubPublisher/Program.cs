@@ -1,16 +1,17 @@
-﻿namespace EventHubPublisher
-{
-    using System;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.EventHubs;
+﻿using System;
+using System.Configuration;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Azure.EventHubs;
 
+namespace EventHubPublisher
+{
     // Source: https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-dotnet-standard-getstarted-send
     public class Program
     {
         private static EventHubClient eventHubClient;
-        private const string EventHubConnectionString = "<INSERT YOUR CONNECTION STRING>"; // ie Endpoint=sb://XXX.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXX
-        private const string EventHubName = "<INSERT YOUR EVENT HUB NAME>"; // ie myeventhub1
+        private static readonly string EventHubConnectionString = ConfigurationManager.ConnectionStrings["EventHubConnectionString"].ConnectionString;
+        private static readonly string EventHubName = ConfigurationManager.AppSettings["EventHubName"]; // ie myeventhub1
 
         public static void Main(string[] args)
         {
